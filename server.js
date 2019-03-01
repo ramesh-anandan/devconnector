@@ -1,11 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+
 const config = require("./config/config");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 mongoose
   .connect(config.mongoURI, { useNewUrlParser: true })
@@ -16,7 +22,9 @@ mongoose
     console.log("Mongodb connection failed");
   });
 
-app.get("/", (req, res) => res.send("Welcome!"));
+app.use(passport.initialize());
+
+require("./config/passport")(passport);
 
 // User routes
 app.use("/api/users", users);
