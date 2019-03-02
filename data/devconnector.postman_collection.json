@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "9fcf4fdb-dd2c-431f-949a-a62dbf383836",
+		"name": "devconnector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "POST /posts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "this is sample post from john",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/posts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/posts/5c7a52e4c3abec5d244e8c78",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"5c7a52e4c3abec5d244e8c78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/posts/5c7a52e4c3abec5d244e8c78",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"5c7a52e4c3abec5d244e8c78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /like/:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/posts/like/5c7a51f4c3abec5d244e8c77",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"like",
+								"5c7a51f4c3abec5d244e8c77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /unlike/:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/posts/unlike/5c7a51f4c3abec5d244e8c77",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"unlike",
+								"5c7a51f4c3abec5d244e8c77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /comment/:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "this is awesome post",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/comment/5c7a51f4c3abec5d244e8c77",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"comment",
+								"5c7a51f4c3abec5d244e8c77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /comment/:id/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "this is awesome post",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/comment/5c7a51f4c3abec5d244e8c77/5c7a55dac3abec5d244e8c7a",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"comment",
+								"5c7a51f4c3abec5d244e8c77",
+								"5c7a55dac3abec5d244e8c7a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "GET /profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /profile/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile/all",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /profile/handle/:handle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile/handle/john",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"handle",
+								"john"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /profiles/user/:user_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile/user/5c7819af79f01d5470a4e3e2",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"user",
+								"5c7819af79f01d5470a4e3e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "handle",
+									"value": "john",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Developer",
+									"type": "text"
+								},
+								{
+									"key": "skills",
+									"value": "android,react native,nodejs",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "www.glukoin.com",
+									"type": "text"
+								},
+								{
+									"key": "youtube",
+									"value": "www.youtube.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile/experience",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Experience1",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "Samsung",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "01-01-2016",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile/experience",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile/experience/:exp_id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/profile/experience/5c7950feb6f12256acf8e4f1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"experience",
+								"5c7950feb6f12256acf8e4f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile/education/:edu_id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/profile/education/5c7953e784edfd3d10cf8ed7",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"education",
+								"5c7953e784edfd3d10cf8ed7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/profile",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /profile/education",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "school",
+									"value": "School",
+									"type": "text"
+								},
+								{
+									"key": "degree",
+									"value": "be",
+									"type": "text"
+								},
+								{
+									"key": "fieldofstudy",
+									"value": "eee",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "01-01-2000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/profile/education",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profile",
+								"education"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GET /users/test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/test",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /users/current",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/current",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"current"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /users/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ramesh",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "john@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test@123",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "test@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/register",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61cc54f4-e02c-49da-97cc-dfad02be47ea",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"token\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "techguyinfo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /users/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "techguyinfo@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/login",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd-oD6GjFAQh8TGJMTjVNsx5A6G4Vg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Feb 2019 10:53:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"successs\": true,\n    \"z-token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNzdhZGI2YTc5OGUxNTZiODc5YmQxOSIsImVtYWlsIjoidGVjaGd1eWluZm9AZ21haWwuY29tIiwiaWF0IjoxNTUxMzUxMTk0fQ.ebWOc66SXuukhM4xcMXMI6kSlamzOrvR9guogF1OZ6w\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
