@@ -40,7 +40,7 @@ router.post(
   (req, res) => {
     const { errors, isValid } = validateProfileInput(req.body);
 
-    if (!isValid) res.status(400).send(errors);
+    if (!isValid) return res.status(400).send(errors);
 
     const profileFields = {};
     profileFields.user = req.user.id;
@@ -98,6 +98,7 @@ router.get("/all", (req, res) => {
   const errors = {};
 
   Profile.find()
+    .populate("user", ["name", "avatar"])
     .then(profiles => {
       if (!profiles) {
         errors.profiles = "There are no profiles";

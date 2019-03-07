@@ -70,7 +70,7 @@ router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
-    return res.status(400).send({ errors });
+    return res.status(400).send(errors);
   }
 
   User.findOne({ email: req.body.email })
@@ -86,7 +86,8 @@ router.post("/login", (req, res) => {
           if (isMatch) {
             let payload = {
               id: user.id,
-              email: user.email
+              name: user.name,
+              avatar: user.avatar
             };
 
             jwt.sign(
